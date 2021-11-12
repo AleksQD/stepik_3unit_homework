@@ -6,7 +6,7 @@ import pytest
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
-
+    # считываем из командной строки параметр языка браузера
     parser.addoption('--language', action='store', default=None,
                      help="Choose language: es or fr")
 
@@ -19,6 +19,7 @@ def browser(request):
 
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
+        # для хрома обьявляем язык браузера
         options = Options()
         options.add_experimental_option('prefs',
                                         {'intl.accept_languages': user_language})
