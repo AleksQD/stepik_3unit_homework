@@ -10,7 +10,7 @@ def test_button_basket(browser):
     button = len(browser.find_elements_by_css_selector(".btn-add-to-basket"))
 
     # оставил тайм для проверки работы
-    # time.sleep(10)
+    # time.sleep(8)
 
     # проверяем что количество найденных элементов больше 0
     assert button > 0, 'Отсутвует кнопка добавления в корзину'
